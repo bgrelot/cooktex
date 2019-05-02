@@ -1,0 +1,54 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Couverture :
+\thispagestyle{empty}
+
+\newenvironment{vcenterpage}
+{\newpage\vspace*{\fill}}
+{\vspace*{\fill}\par\pagebreak}
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1pt\hfill \kern \z@}
+% Dans le cas d'une page faite à la main :
+
+%\begin{titlepage}
+%\begin{center}
+%\begin{tabular}{c}
+%\includegraphics[width=16cm]{firstpage.pdf}
+%\end{tabular}
+%\end{center}
+%\end{titlepage}
+
+% Dans le cas d'une page LaTeX
+
+\begin{titlepage}
+\begin{tabular}{p{10cm}p{5cm}}
+\end{tabular}    
+\vspace*{1.5cm}
+
+\begin{flushleft}
+\huge Cook\TeX
+\end{flushleft}
+\par
+\hrule height 4pt
+\par
+\begin{flushright}
+\textcolor[gray]{0.5}{\LARGE \textbf{Recueil de recettes collaboratif}}
+\end{flushright}
+
+\vspace*{9cm}
+
+\begin{center}
+\begin{tabular}{lp{3cm}l}
+%\hline
+%\\
+%\\
+%\\
+\textcolor[gray]{0.4}{\large Contributeurs :} & & \textcolor[gray]{0.4}{\large Avec le support de :}\\
+Florent Fourcot & & Jeanne-Marie Laverge\\
+Bertrand Grelot & & Paul Martrenchar\\
+Madeleine Icole & & Jean Dion\\
+Louise Degeorges & & Adrien Guinet\\
+Isabelle Kraemer & & \\
+\end{tabular}
+\end{center}
+
+\end{titlepage}
+
+

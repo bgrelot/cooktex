@@ -1,0 +1,85 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Si vous voulez plus petit passez en 11pt voire encore plus petit en 10pt
+\documentclass[11pt,titlepage]{report}
+\setlength{\textwidth}{175mm}
+%\pagestyle{plain} \setlength{\unitlength}{0.7cm}
+\usepackage[francais]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{textcomp}
+\usepackage[cyr]{aeguill}
+\usepackage{fancyhdr}
+\usepackage[pdftex]{graphicx}
+\usepackage{makeidx}
+\DeclareGraphicsExtensions{.jpg,.pdf}
+\usepackage[pdftex,colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{anysize}
+\marginsize{22mm}{14mm}{12mm}{25mm}
+\usepackage{natbib}
+\usepackage{eurosym}
+\usepackage{wasysym} % Pour des smilies
+\newcommand{\figref}[1]{figure~\ref{#1}}
+\newcommand{\Ref}[1]{(\ref{#1})}
+\newcommand{\empha}[1]{\textit{\textbf{#1}}}
+\newcommand{\D}{\partial}
+\newcommand{\Dt}{\partial_t}
+\newcommand{\Dx}{\partial_x}
+\newcommand{\Dy}{\partial_y}
+\newcommand{\barre}{\hbox{\raisebox{0em}{\vrule depth 0pt height 0.4pt width \textwidth}}}
+\newcommand{\astuce}{\hint}
+\newcommand{\cuisson}{\sidedish}
+\newcommand{\recette}[1]{\begin{recipe}{#1}   \addcontentsline{toc}{section}{#1}}
+\newcommand{\chapitre}[1]{\chapter*{#1} \addcontentsline{toc}{chapter}{#1} \chaptermark{#1}}
+\usepackage{cooktex} % Pour cuisiner !
+\usepackage{helvetica}
+% Avec le paquet lmodern qui va bien
+% Et probablement cm-super, mais tout le monde l'a forcément déjà installé...
+\usepackage{lmodern} %c'est plus beau ! 
+\makeindex
+
+% Début du document
+
+\begin{document}
+
+\pagestyle{fancyplain}
+%\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter. #1}{}}
+%\renewcommand{\sectionmark}[1]{\markright{\thesection. #1}}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+
+\lhead[]{\fancyplain{}{\bfseries\leftmark}}
+\rhead[]{\fancyplain{}{\bfseries\thepage}}
+\cfoot{}
+
+\makeatletter
+\def\figurename{{\protect\sc \protect\small\bfseries Fig.}}
+\def\f@ffrench{\protect\figurename\space{\protect\small\bf \thefigure}\space}
+\let\fnum@figure\f@ffrench%
+\let\captionORI\caption
+\def\caption#1{\captionORI{\rm\small #1}}
+\makeatother
+
+\input{couverture.tex}
+
+\renewcommand*{\sidedish}[1]{%
+\item[\bfseries Cuisson] #1%
+}
+\renewcommand*{\hint}[1]{%
+\item[\bfseries Astuce] #1%
+}
+\renewcommand*{\preparationtime}[1]{%
+\item[\bfseries Temps de préparation] #1%
+}
+\renewcommand*{\modification}[1]{%
+\item[\bfseries Modification] #1%
+}
+
+\setlength{\recipemargin}{7cm}
+
+%\strut
+%\vfill
+
+\tableofcontents
+
+\input{include.tex}
+
+\end{document}
