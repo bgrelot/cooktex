@@ -1,22 +1,36 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Si vous voulez plus petit passez en 11pt voire encore plus petit en 10pt
-\documentclass[11pt,titlepage]{report}
+
+% Document class
+\documentclass[11pt,titlepage,twoside]{report}
+
+% Dimensions
 \setlength{\textwidth}{175mm}
 %\pagestyle{plain} \setlength{\unitlength}{0.7cm}
+
+% Language & encoding
 \usepackage[francais]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage{textcomp}
 \usepackage[cyr]{aeguill}
+
+% Beautification
 \usepackage{fancyhdr}
 \usepackage[pdftex]{graphicx}
 \usepackage{makeidx}
 \DeclareGraphicsExtensions{.jpg,.pdf}
 \usepackage[pdftex,colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+% Margins
 \usepackage{anysize}
 \marginsize{22mm}{14mm}{12mm}{25mm}
+
+% Additional packages
 \usepackage{natbib}
 \usepackage{eurosym}
 \usepackage{wasysym} % Pour des smilies
+
+% Customization
 \newcommand{\figref}[1]{figure~\ref{#1}}
 \newcommand{\Ref}[1]{(\ref{#1})}
 \newcommand{\empha}[1]{\textit{\textbf{#1}}}
@@ -29,11 +43,18 @@
 \newcommand{\cuisson}{\sidedish}
 \newcommand{\recette}[1]{\begin{recipe}{#1}   \addcontentsline{toc}{section}{#1}}
 \newcommand{\chapitre}[1]{\chapter*{#1} \addcontentsline{toc}{chapter}{#1} \chaptermark{#1}}
+
+% The cooktex package	
 \usepackage{cooktex} % Pour cuisiner !
-\usepackage{helvetica}
+
+% Fonts
+
+\usepackage[sfdefault,light]{roboto}
+%\usepackage{helvetica}
 % Avec le paquet lmodern qui va bien
 % Et probablement cm-super, mais tout le monde l'a forcément déjà installé...
-\usepackage{lmodern} %c'est plus beau ! 
+%\usepackage{lmodern} %c'est plus beau ! 
+
 \makeindex
 
 % Début du document
@@ -46,8 +67,8 @@
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{#1}}
 
-\lhead[]{\fancyplain{}{\bfseries\leftmark}}
-\rhead[]{\fancyplain{}{\bfseries\thepage}}
+\lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries\leftmark}}
+\rhead[\fancyplain{}{\bfseries\leftmark}]{\fancyplain{}{\bfseries\thepage}}
 \cfoot{}
 
 \makeatletter
@@ -77,6 +98,8 @@
 
 %\strut
 %\vfill
+
+\cleardoublepage
 
 \tableofcontents
 
