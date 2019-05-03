@@ -14,6 +14,9 @@ texlive-generic-recommended
 texlive-latex-extra
 texlive-fonts-recommended
 texlive-fonts-extra
+texlive-lang-french
+texlive-lang-cyrillic
+lmodern
 ```
 
 ## How it's built
