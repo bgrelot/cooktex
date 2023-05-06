@@ -10,7 +10,7 @@ fi
 
 function concat { 
 prefixe=$1
-for foldersel in `find $prefixe -maxdepth 1 -mindepth 1 -type d ! -name '.*' | sed -e "s/$prefixe\///g"`
+for foldersel in `find $prefixe -maxdepth 1 -mindepth 1 -type d ! -name '.*' | sort | sed -e "s/$prefixe\///g"`
 do
     echo \\chapitre{$foldersel}>>include.tex
     I=0
